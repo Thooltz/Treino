@@ -1,4 +1,4 @@
-/* Mobile First - Design Ultra Moderno */
+/* Mobile First - Design Premium Ultra Moderno */
 .tabs {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -11,20 +11,23 @@
 
 .tab {
   padding: 0.75rem 0.4rem;
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.15));
-  backdrop-filter: blur(15px);
-  border-radius: 14px;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.25), 
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.25));
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
   font-size: 0.75rem;
   font-weight: 700;
   color: white;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   text-transform: uppercase;
   letter-spacing: 0.3px;
   position: relative;
   overflow: hidden;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
   touch-action: manipulation;
   min-height: 44px;
   display: flex;
@@ -33,8 +36,9 @@
   text-align: center;
   -webkit-tap-highlight-color: transparent;
   box-shadow: 
-    0 2px 8px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    0 4px 15px rgba(0, 0, 0, 0.2),
+    inset 0 2px 0 rgba(255, 255, 255, 0.3),
+    0 0 25px rgba(255, 255, 255, 0.1);
 }
 
 .tab::before {
@@ -44,9 +48,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.25), 
+    transparent);
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.4s;
 }
 
 .tab::after {
@@ -56,8 +62,11 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 0.5s;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.4), 
+    transparent);
+  transition: left 0.6s;
 }
 
 .tab:active::before {
@@ -69,41 +78,52 @@
 }
 
 .tab:active {
-  transform: scale(0.95);
-  border-color: rgba(255, 255, 255, 0.6);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.25));
+  transform: scale(0.94);
+  border-color: rgba(255, 255, 255, 0.7);
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.35), 
+    rgba(255, 255, 255, 0.3));
   box-shadow: 
-    0 4px 12px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    0 6px 20px rgba(0, 0, 0, 0.25),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4),
+    0 0 35px rgba(255, 255, 255, 0.15);
 }
 
 .tab.active {
-  background: linear-gradient(135deg, #ff6b9d 0%, #c44569 50%, #ff6b9d 100%);
-  background-size: 200% 100%;
+  background: linear-gradient(135deg, 
+    #ff6b9d 0%, 
+    #c44569 30%, 
+    #ff6b9d 60%, 
+    #ff8fab 100%);
+  background-size: 300% 100%;
   color: white;
-  border-color: rgba(255, 255, 255, 0.7);
+  border-color: rgba(255, 255, 255, 0.8);
   box-shadow: 
-    0 6px 20px rgba(255, 107, 157, 0.6),
-    0 0 30px rgba(255, 107, 157, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-  transform: scale(1.02);
+    0 8px 30px rgba(255, 107, 157, 0.7),
+    0 0 50px rgba(255, 107, 157, 0.5),
+    0 0 80px rgba(255, 107, 157, 0.3),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.15);
+  transform: scale(1.03);
   font-weight: 800;
-  animation: activeTabGlow 2s ease-in-out infinite, activeTabGradient 3s ease-in-out infinite;
+  animation: activeTabGlow 3s ease-in-out infinite, 
+             activeTabGradient 4s ease-in-out infinite;
 }
 
 @keyframes activeTabGlow {
   0%, 100% {
     box-shadow: 
-      0 6px 20px rgba(255, 107, 157, 0.6),
-      0 0 30px rgba(255, 107, 157, 0.4),
-      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      0 8px 30px rgba(255, 107, 157, 0.7),
+      0 0 50px rgba(255, 107, 157, 0.5),
+      0 0 80px rgba(255, 107, 157, 0.3),
+      inset 0 2px 0 rgba(255, 255, 255, 0.4);
   }
   50% {
     box-shadow: 
-      0 8px 25px rgba(255, 107, 157, 0.8),
-      0 0 40px rgba(255, 107, 157, 0.6),
-      inset 0 1px 0 rgba(255, 255, 255, 0.4);
+      0 10px 40px rgba(255, 107, 157, 0.9),
+      0 0 70px rgba(255, 107, 157, 0.7),
+      0 0 110px rgba(255, 107, 157, 0.5),
+      inset 0 2px 0 rgba(255, 255, 255, 0.5);
   }
 }
 
@@ -123,8 +143,11 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-  animation: tabShine 3s infinite;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.5), 
+    transparent);
+  animation: tabShine 4s infinite;
 }
 
 @keyframes tabShine {
@@ -137,8 +160,8 @@
 }
 
 .tab:focus {
-  outline: 3px solid rgba(255, 107, 157, 0.6);
-  outline-offset: 2px;
+  outline: 3px solid rgba(255, 107, 157, 0.7);
+  outline-offset: 3px;
 }
 
 /* Desktop */
@@ -155,25 +178,27 @@
     min-width: 90px;
     padding: 1.25rem 1.75rem;
     font-size: 1.1rem;
-    border-radius: 20px;
+    border-radius: 24px;
     min-height: auto;
   }
   
   .tab:hover {
-    border-color: rgba(255, 255, 255, 0.7);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.25));
-    transform: translateY(-5px) scale(1.05);
+    border-color: rgba(255, 255, 255, 0.8);
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.35), 
+      rgba(255, 255, 255, 0.3));
+    transform: translateY(-6px) scale(1.08);
     box-shadow: 
-      0 10px 30px rgba(0, 0, 0, 0.25),
-      0 0 40px rgba(255, 255, 255, 0.15),
-      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      0 12px 40px rgba(0, 0, 0, 0.3),
+      0 0 60px rgba(255, 255, 255, 0.2),
+      inset 0 2px 0 rgba(255, 255, 255, 0.4);
   }
   
   .tab.active {
-    transform: translateY(-3px) scale(1.05);
+    transform: translateY(-4px) scale(1.08);
   }
   
   .tab:active {
-    transform: translateY(-1px) scale(1.02);
+    transform: translateY(-2px) scale(1.05);
   }
 }

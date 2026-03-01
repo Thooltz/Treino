@@ -1,9 +1,15 @@
-/* Mobile First - Design Ultra Moderno */
+/* Mobile First - Design Premium Ultra Moderno */
 .app {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 30%, #f093fb 60%, #4facfe 100%);
-  background-size: 400% 400%;
-  animation: gradientShift 20s ease infinite;
+  background: linear-gradient(135deg, 
+    #667eea 0%, 
+    #764ba2 20%, 
+    #f093fb 40%, 
+    #4facfe 60%, 
+    #00f2fe 80%, 
+    #667eea 100%);
+  background-size: 500% 500%;
+  animation: gradientShift 25s ease infinite;
   padding: 0.5rem;
   position: relative;
   overflow-x: hidden;
@@ -14,8 +20,14 @@
   0% {
     background-position: 0% 50%;
   }
-  50% {
+  25% {
     background-position: 100% 50%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
   }
   100% {
     background-position: 0% 50%;
@@ -30,22 +42,32 @@
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 15% 40%, rgba(255, 107, 157, 0.4) 0%, transparent 45%),
-    radial-gradient(circle at 85% 75%, rgba(102, 126, 234, 0.35) 0%, transparent 50%),
-    radial-gradient(circle at 50% 20%, rgba(118, 75, 162, 0.25) 0%, transparent 40%),
-    radial-gradient(circle at 30% 80%, rgba(79, 172, 254, 0.3) 0%, transparent 45%);
+    radial-gradient(circle at 10% 30%, rgba(255, 107, 157, 0.5) 0%, transparent 40%),
+    radial-gradient(circle at 90% 70%, rgba(102, 126, 234, 0.45) 0%, transparent 45%),
+    radial-gradient(circle at 50% 10%, rgba(118, 75, 162, 0.35) 0%, transparent 35%),
+    radial-gradient(circle at 20% 85%, rgba(79, 172, 254, 0.4) 0%, transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(0, 242, 254, 0.3) 0%, transparent 35%);
   pointer-events: none;
-  animation: particlesFloat 25s ease-in-out infinite;
+  animation: particlesFloat 30s ease-in-out infinite;
+  filter: blur(40px);
 }
 
 @keyframes particlesFloat {
   0%, 100% {
-    transform: translateY(0) scale(1);
+    transform: translateY(0) translateX(0) scale(1);
     opacity: 1;
   }
+  25% {
+    transform: translateY(-30px) translateX(20px) scale(1.15);
+    opacity: 0.9;
+  }
   50% {
-    transform: translateY(-20px) scale(1.1);
-    opacity: 0.8;
+    transform: translateY(-20px) translateX(-15px) scale(1.1);
+    opacity: 0.85;
+  }
+  75% {
+    transform: translateY(-40px) translateX(10px) scale(1.2);
+    opacity: 0.95;
   }
 }
 
@@ -56,19 +78,22 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 50px 50px;
-  animation: gridMove 30s linear infinite;
+  background: 
+    radial-gradient(circle, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 107, 157, 0.1) 1px, transparent 1px);
+  background-size: 60px 60px, 40px 40px;
+  animation: gridMove 40s linear infinite;
   pointer-events: none;
-  opacity: 0.3;
+  opacity: 0.4;
+  mix-blend-mode: overlay;
 }
 
 @keyframes gridMove {
   0% {
-    transform: translate(0, 0);
+    transform: translate(0, 0) rotate(0deg);
   }
   100% {
-    transform: translate(50px, 50px);
+    transform: translate(60px, 60px) rotate(360deg);
   }
 }
 
@@ -86,26 +111,64 @@
   font-weight: 900;
   margin: 0 0 0.5rem 0;
   text-shadow: 
-    0 4px 8px rgba(0, 0, 0, 0.4),
-    0 0 20px rgba(255, 255, 255, 0.3),
-    0 0 40px rgba(255, 107, 157, 0.2);
-  background: linear-gradient(135deg, #ffffff 0%, #ffd700 50%, #ffffff 100%);
-  background-size: 200% 100%;
+    0 6px 12px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(255, 255, 255, 0.4),
+    0 0 60px rgba(255, 107, 157, 0.3),
+    0 0 90px rgba(102, 126, 234, 0.2);
+  background: linear-gradient(135deg, 
+    #ffffff 0%, 
+    #ffd700 25%, 
+    #ffed4e 50%, 
+    #ffffff 75%, 
+    #ffd700 100%);
+  background-size: 300% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   letter-spacing: -0.2px;
   line-height: 1.2;
-  animation: titleShine 3s ease-in-out infinite;
-  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+  animation: titleShine 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.7));
+  position: relative;
+}
+
+.mainTitle::before {
+  content: 'Treino da Semana';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, 
+    rgba(255, 107, 157, 0.3), 
+    rgba(102, 126, 234, 0.3), 
+    rgba(118, 75, 162, 0.3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: blur(8px);
+  z-index: -1;
+  animation: titleGlow 3s ease-in-out infinite;
 }
 
 @keyframes titleShine {
   0%, 100% {
     background-position: 0% 50%;
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.7));
   }
   50% {
     background-position: 100% 50%;
+    filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.9));
+  }
+}
+
+@keyframes titleGlow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1.02);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
   }
 }
 
@@ -114,16 +177,19 @@
   margin: 0 auto;
   opacity: 0.95;
   line-height: 1.4;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.15));
-  backdrop-filter: blur(15px);
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.35), 
+    rgba(255, 255, 255, 0.2));
+  backdrop-filter: blur(20px);
   padding: 0.5rem 1rem;
-  border-radius: 25px;
+  border-radius: 30px;
   display: inline-block;
-  border: 2px solid rgba(255, 255, 255, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.5);
   box-shadow: 
-    0 4px 15px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    0 8px 25px rgba(0, 0, 0, 0.3),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4),
+    0 0 30px rgba(255, 255, 255, 0.2);
   max-width: 95%;
   word-wrap: break-word;
   position: relative;
@@ -137,8 +203,11 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  animation: subtitleShine 4s infinite;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.4), 
+    transparent);
+  animation: subtitleShine 5s infinite;
 }
 
 @keyframes subtitleShine {
@@ -152,13 +221,23 @@
 
 .subtitle strong {
   font-weight: 700;
-  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  background: linear-gradient(135deg, #ffd700, #ffed4e, #fff700);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   display: inline-block;
-  text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
-  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.4));
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
+  animation: strongPulse 2s ease-in-out infinite;
+}
+
+@keyframes strongPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.9));
+  }
 }
 
 .actions {
@@ -173,8 +252,12 @@
 
 .actionButton {
   padding: 0.875rem 1.25rem;
-  background: linear-gradient(135deg, #ff6b9d 0%, #c44569 50%, #ff6b9d 100%);
-  background-size: 200% 100%;
+  background: linear-gradient(135deg, 
+    #ff6b9d 0%, 
+    #c44569 30%, 
+    #ff6b9d 60%, 
+    #ff8fab 100%);
+  background-size: 300% 100%;
   border: none;
   border-radius: 50px;
   font-size: 0.8rem;
@@ -183,9 +266,11 @@
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 
-    0 4px 20px rgba(255, 107, 157, 0.5),
-    0 0 30px rgba(255, 107, 157, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    0 6px 25px rgba(255, 107, 157, 0.6),
+    0 0 40px rgba(255, 107, 157, 0.4),
+    0 0 60px rgba(255, 107, 157, 0.2),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.1);
   text-transform: uppercase;
   letter-spacing: 0.3px;
   position: relative;
@@ -196,21 +281,25 @@
   align-items: center;
   justify-content: center;
   -webkit-tap-highlight-color: transparent;
-  animation: buttonGlow 2s ease-in-out infinite;
+  animation: buttonGlow 3s ease-in-out infinite;
 }
 
 @keyframes buttonGlow {
   0%, 100% {
     box-shadow: 
-      0 4px 20px rgba(255, 107, 157, 0.5),
-      0 0 30px rgba(255, 107, 157, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      0 6px 25px rgba(255, 107, 157, 0.6),
+      0 0 40px rgba(255, 107, 157, 0.4),
+      0 0 60px rgba(255, 107, 157, 0.2),
+      inset 0 2px 0 rgba(255, 255, 255, 0.4);
+    background-position: 0% 50%;
   }
   50% {
     box-shadow: 
-      0 6px 25px rgba(255, 107, 157, 0.7),
-      0 0 40px rgba(255, 107, 157, 0.5),
-      inset 0 1px 0 rgba(255, 255, 255, 0.4);
+      0 8px 35px rgba(255, 107, 157, 0.8),
+      0 0 60px rgba(255, 107, 157, 0.6),
+      0 0 90px rgba(255, 107, 157, 0.4),
+      inset 0 2px 0 rgba(255, 255, 255, 0.5);
+    background-position: 100% 50%;
   }
 }
 
@@ -221,8 +310,11 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-  transition: left 0.6s;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.5), 
+    transparent);
+  transition: left 0.7s;
 }
 
 .actionButton:active::before {
@@ -230,12 +322,12 @@
 }
 
 .actionButton:active {
-  transform: scale(0.95);
+  transform: scale(0.94);
   background-position: 100% 0;
 }
 
 .actionButton:focus {
-  outline: 3px solid rgba(255, 107, 157, 0.6);
+  outline: 3px solid rgba(255, 107, 157, 0.7);
   outline-offset: 3px;
 }
 
@@ -278,12 +370,13 @@
   }
   
   .actionButton:hover {
-    transform: translateY(-4px) scale(1.05);
+    transform: translateY(-5px) scale(1.08);
     background-position: 100% 0;
     box-shadow: 
-      0 10px 35px rgba(255, 107, 157, 0.7),
-      0 0 50px rgba(255, 107, 157, 0.5),
-      inset 0 1px 0 rgba(255, 255, 255, 0.4);
+      0 12px 45px rgba(255, 107, 157, 0.8),
+      0 0 80px rgba(255, 107, 157, 0.6),
+      0 0 120px rgba(255, 107, 157, 0.4),
+      inset 0 2px 0 rgba(255, 255, 255, 0.5);
   }
   
   .main {
