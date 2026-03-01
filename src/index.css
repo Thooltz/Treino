@@ -1,4 +1,4 @@
-/* Reset e estilos globais */
+/* Reset e estilos globais - 100% Mobile First */
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +9,7 @@ html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
+  font-size: 16px; /* Base para mobile */
 }
 
 body {
@@ -21,34 +22,55 @@ body {
   background: #0a0e27;
   overflow-x: hidden;
   touch-action: pan-y;
+  width: 100%;
+  position: relative;
 }
 
 #root {
   width: 100%;
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden;
 }
 
 /* Acessibilidade: melhor contraste e foco visível */
 button:focus-visible {
-  outline: 3px solid #ff6b9d;
-  outline-offset: 3px;
+  outline: 2px solid #ff6b9d;
+  outline-offset: 2px;
 }
 
-/* Melhorias para touch */
-button, a {
-  -webkit-tap-highlight-color: rgba(255, 107, 157, 0.2);
+/* Melhorias para touch - Mobile First */
+button, a, [role="button"] {
+  -webkit-tap-highlight-color: rgba(255, 107, 157, 0.15);
   touch-action: manipulation;
+  cursor: pointer;
 }
 
 /* Previne seleção de texto acidental no mobile */
-button {
+button, [role="button"] {
   user-select: none;
   -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
-/* Scrollbar personalizada (desktop) */
+/* Melhor legibilidade no mobile */
+p, span, div {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Previne zoom indesejado em inputs no iOS */
+input, textarea, select {
+  font-size: 16px;
+}
+
+/* Scrollbar personalizada (apenas desktop) */
 @media (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+  
   ::-webkit-scrollbar {
     width: 10px;
   }

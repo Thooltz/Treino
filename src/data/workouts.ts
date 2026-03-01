@@ -144,12 +144,14 @@ export const workouts: Workout[] = [
       {
         title: 'Perna',
         items: [
-          'Mesa flexora',
           'Stiff',
-          'Cadeira flexora',
+          'Mesa Flexora',
+          'Agachamento Búlgaro',
+          'Agachamento Sumo',
           'Coice',
-          'Abdutora',
-          'Panturrilha sentado',
+          'Glute Bridge / Hip Thrust na máquina',
+          'Abdução de Quadril (abrir perna)',
+          'Panturrilha',
         ],
       },
       {
@@ -169,7 +171,7 @@ export const workouts: Workout[] = [
     sections: [
       {
         title: 'Aquecimento',
-        items: ['Bike – 5 min'],
+        items: ['Bike – 5 min'],/*  */
       },
       {
         title: 'Ombro',

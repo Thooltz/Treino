@@ -1,5 +1,7 @@
 import { Workout } from '../data/workouts';
-import { SectionList } from './SectionList';
+import { convertSectionsToDayPlan } from '../data/workoutPlans';
+import { weekDayToDayKey } from '../utils/dayUtils';
+import { WorkoutToday } from './WorkoutToday';
 import styles from './WorkoutCard.module.css';
 
 interface WorkoutCardProps {
@@ -8,6 +10,10 @@ interface WorkoutCardProps {
 
 // Componente principal que exibe o card do treino
 export function WorkoutCard({ workout }: WorkoutCardProps) {
+  // Converte as seções do workout para DayPlan
+  const dayPlan = convertSectionsToDayPlan(workout.sections);
+  const dayKey = weekDayToDayKey(workout.day);
+
   return (
     <div className={styles.card}>
       <div className={styles.header}>
@@ -17,9 +23,11 @@ export function WorkoutCard({ workout }: WorkoutCardProps) {
         </h2>
       </div>
       <div className={styles.content}>
-        {workout.sections.map((section, index) => (
-          <SectionList key={index} section={section} />
-        ))}
+        <WorkoutToday
+          dayPlan={dayPlan}
+          dayKey={dayKey}
+          dayName={workout.dayName}
+        />
       </div>
     </div>
   );
