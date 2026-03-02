@@ -26,7 +26,6 @@ export function WorkoutCard({ workout }: WorkoutCardProps) {
         <WorkoutToday
           dayPlan={dayPlan}
           dayKey={dayKey}
-          dayName={workout.dayName}
         />
       </div>
     </div>

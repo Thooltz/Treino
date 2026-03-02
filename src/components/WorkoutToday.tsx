@@ -7,13 +7,12 @@ import styles from './WorkoutToday.module.css';
 interface WorkoutTodayProps {
   dayPlan: DayPlan[];
   dayKey: DayKey;
-  dayName: string;
 }
 
 /**
  * Componente principal que exibe o treino do dia com checklist
  */
-export function WorkoutToday({ dayPlan, dayKey, dayName }: WorkoutTodayProps) {
+export function WorkoutToday({ dayPlan, dayKey }: WorkoutTodayProps) {
   // Chave do localStorage para o progresso deste dia
   const storageKey = `progress:${dayKey}`;
   
