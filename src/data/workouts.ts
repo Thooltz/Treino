@@ -229,7 +229,7 @@ export function getDayName(day: WeekDay): string {
     [WeekDay.WEDNESDAY]: 'Quarta-feira',
     [WeekDay.THURSDAY]: 'Quinta-feira',
     [WeekDay.FRIDAY]: 'Sexta-feira',
-    [WeekDay.SATURDAY]: 'Sábadão',
+    [WeekDay.SATURDAY]: 'Sábado',
     [WeekDay.SUNDAY]: 'Domingo',
   };
   return dayNames[day];
